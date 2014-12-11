@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+        <!-- PROVIDE METADATA -->
+        <!-- ================ -->
+        <title>Testing/Demo'ing deck.browsercast.js</title>
+        <meta name="author" content="Rémi Emonet">
+        <meta name="date" content="2014-12-11">
+
+        <meta name="audio" content="synth.ogg">
+        <meta name="timings" content="timings.json">
+
+
+        <!-- override some style here if needed (or use an external file) -->
+	<script src="deck.js/extensions/includedeck/load.js"></script>
+        <script>
+            includedeck([
+                "profile-5",
+                "browsercast/deck.browsercast.js",
+                "browsercast/deck.browsercast.css",
+                "theme:swiss"
+            ], {})
+
+            // Advanced: the "{}" can be filled with optional arguments such as
+            //// PREFIX: "deck.js",
+            //// INITDELAY: 500,
+            //// BEFORELOAD: function() {alert('will load')},
+            //// BEFOREINIT: function() {alert('loaded')},
+            //// AFTERINIT: function() {alert('inited')},
+            //// GENERIC: function(whe, wha) {if (whe == "AFTER" && wha == "svg") alert("AFTER SVG")},
+            //// fitMarginX:100, fitMarginY:100, // to tune margins
+            //// fitMode: "stretched", // to strech (variable aspect ratio)
+
+            // You can alternatively select what to include (as in these commented out examples)
+        </script>
+        <style>
+            .title-slide h1 {font-size: 80px;}
+        </style>
+    </head>
+<body>
+<div class="deck-container">
+
+    <section class="slide title-slide">
+        <h1>Browsercast test/demo</h1>
+    </section>
+
+    <section class="slide">
+        <h2>Browsercast modes</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Browsercast <br/>replay features</h2>
+    </section>
+    
+    <section class="slide">
+        <h2>Browsercast <br/>recording features</h2>
+    </section>
+
+    <section class="slide title-slide">
+        <h1>Thanks</h1>
+    </section>
+
+    <!-- progress bar -->
+    <div
+         data-progress-size=":spe.bottom(5, 5) ; left: slide.left+'px' ; height: (5*designRatio)+'px'"
+         data-progress="width: detail.p * slide.width" style="background: #F88; position: absolute;"
+         > </div>
+
+    <!-- deck.navigation snippet -->
+    <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+    <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+</div> <!-- end of deck container -->
+
+</body>
+</html>
