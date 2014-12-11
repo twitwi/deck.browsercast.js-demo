@@ -22,6 +22,7 @@
                 "profile-5",
                 "browsercast/deck.browsercast.js",
                 "browsercast/deck.browsercast.css",
+                "browsercast/player.css",
                 "theme:swiss"
             ], {})
 
@@ -43,7 +44,7 @@
     </head>
 <body>
 <div class="deck-container">
-
+    
     <section class="slide title-slide">
         <h1>Browsercast test/demo</h1>
     </section>
@@ -63,6 +64,20 @@
     <section class="slide title-slide">
         <h1>Thanks</h1>
     </section>
+
+    <div id="browsercast">
+        <audio id="browsercast-audio">
+            <source src="synth.ogg" type="audio/ogg">
+                Your browser does not support the audio element.
+        </audio>
+        <menu>
+            <button class="playpause"></button>
+        </menu>
+        <div id="markers" class="new">
+            <div class="time-label">1:00</div>
+        </div>
+    </div>
+
 
     <!-- progress bar -->
     <div
