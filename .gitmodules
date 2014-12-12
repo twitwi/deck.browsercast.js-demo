@@ -1,6 +1,0 @@
-[submodule "deck.browsercast.js"]
-	path = browsercast
-	url = https://github.com/twitwi/deck.browsercast.js.git
-[submodule "deck.js"]
-	path = deck.js
-	url = https://github.com/twitwi/deck.js
