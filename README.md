@@ -1,7 +1,7 @@
 
 # deck.browsercast.js-demo
 
-Simple demo and development projet for the browsercast extension.
+Simple demo and development projet for the [browsercast extension (in its own repository)](http://github.com/twitwi/deck.browsercast.js).
 
 There are a few available demo to watch:
 - [the browsercast pitch](http://twitwi.github.io/deck.browsercast.js-demo/pitch)
