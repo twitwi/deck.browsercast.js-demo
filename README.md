@@ -42,6 +42,7 @@ Loading is way faster as it diminishes a lot the requests (that are sequential w
 
     git checkout gh-pages
     git merge master
+    # may need a "git rm browsercast" if browsercast was updated (same for deck.js)
     git checkout master
     git submodule update --init
     git push --all
