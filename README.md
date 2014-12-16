@@ -57,7 +57,7 @@ Probably do that (to be re-tested)
     git checkout gh-pages
     mv .custom.js deckjs-custom.js 
     git add deckjs-custom.js 
-    git commit
+    git commit -m 'updated custom packed deck.js'
     git push --all
     
     git checkout master
