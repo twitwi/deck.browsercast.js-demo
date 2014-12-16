@@ -10282,6 +10282,8 @@ It also injects some default html for it if none is found (and styles it for the
                 .forEach(f);
         };
 
+        var inited = false; // to avoid the audio setting the current slide to 0 at the beginning (and allow bookmarking)
+
         bc = $(options.selectors.browsercast).get(0);
         audio = $(options.selectors.browsercastAudio).get(0);
         markers = $(options.selectors.browsercastMarkers).get(0);
@@ -10303,6 +10305,7 @@ It also injects some default html for it if none is found (and styles it for the
             markers.appendChild(div);
             divs[k] = div;
             popcorn.cue(k, timings[k], function () {
+                if (!inited) return;
                 transitionLock = true;
                 $.deck('go', parseInt(k));
                 $('.active', markers).removeClass('active');
@@ -10325,14 +10328,17 @@ It also injects some default html for it if none is found (and styles it for the
                 var pc = 100 * (totalDuration - timings[kPrev]) / totalDuration;
                 $(divs[kPrev]).css('width', pc+'%');
                 // Start the 'cast!
-                popcorn.play();
+                inited = true;
+                var currentSlideIndex = $.deck('getSlides').indexOf($.deck('getSlide'));
+                setTimeout(function() { // delay initialization for popcorn to be properly inited
+                    $.deck('go', currentSlideIndex);
+                }, 1);
             } else {
                 setTimeout(function() {
                     trySetCueLengthAndPlay(retries - 1, delay*1.5);
                 }, delay);
             }
         }
-        trySetCueLengthAndPlay(20, 10);
 
         // lock for preventing slidechanged event handler during timeupdate handler.
         // TODO using a mutex seems clunky.
@@ -10375,6 +10381,8 @@ It also injects some default html for it if none is found (and styles it for the
                 e.preventDefault();
             }
         });
+
+        trySetCueLengthAndPlay(20, 10);
 
     }
 
