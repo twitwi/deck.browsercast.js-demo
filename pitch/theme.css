@@ -13,6 +13,10 @@
     padding-top: 30px;
 }
 
+.deck-container>.slide>img { /* special tuning for the browsercast bar, to avoid systematically adding an additional padding on top */
+    margin-top: 1em;
+}
+
 pre {
     font-size: 75%;
     display: inline-block;

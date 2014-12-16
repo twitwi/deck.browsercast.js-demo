@@ -1,7 +1,7 @@
 
 # deck.browsercast.js-demo
 
-Simple demo and development projet for the browsercast extension.
+Simple demo and development projet for the [browsercast extension (in its own repository)](http://github.com/twitwi/deck.browsercast.js).
 
 There are a few available demo to watch:
 - [the browsercast pitch](http://twitwi.github.io/deck.browsercast.js-demo/pitch)
@@ -43,6 +43,7 @@ Loading is way faster as it diminishes a lot the requests (that are sequential w
     git checkout gh-pages
     git merge master
     git checkout master
+    git submodule update --init
     git push --all
 
 ### In case of browsercast evolution
@@ -58,6 +59,7 @@ Probably do that (to be re-tested)
     git add deckjs-custom.js 
     git commit
     git push --all
-
-
+    
+    git checkout master
+    git submodule update --init
     
