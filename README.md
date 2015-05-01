@@ -24,8 +24,9 @@ Loading is way faster as it diminishes a lot the requests (that are sequential w
     git merge master
     git checkout master
     
-    git clone https://github.com/twitwi/deck.js tmpdeck
+    git clone https://github.com/twitwi/deck.js tmpdeck --depth 5
     node ./tmpdeck/extensions/bundle-maker/make-packed.js "profile-5 browsercast/popcorn.js browsercast/deck.browsercast.js browsercast/deck.browsercast.css browsercast/player.css"
+    sed -i -e 's@/home/.*/tmpdeck//*@..../@g' deckjs-custom.js
 
     git checkout gh-pages
     git add deckjs-custom.js 
@@ -52,8 +53,9 @@ Loading is way faster as it diminishes a lot the requests (that are sequential w
 Probably do that (to be re-tested)
 
     git checkout master
-    git clone https://github.com/twitwi/deck.js tmpdeck
+    git clone https://github.com/twitwi/deck.js tmpdeck --depth 5
     node ./tmpdeck/extensions/bundle-maker/make-packed.js "profile-5 browsercast/popcorn.js browsercast/deck.browsercast.js browsercast/deck.browsercast.css browsercast/player.css" .custom.js
+    sed -i -e 's@/home/.*/tmpdeck//*@..../@g' .custom.js
     
     git checkout gh-pages
     mv .custom.js deckjs-custom.js 
