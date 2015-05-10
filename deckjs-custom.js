@@ -1,6 +1,6 @@
 /*
   This is a packed deck.js with some extensions and styles.
-  It has been generated from version 129dc12082d8ff002902a91d7f061a0c1d372e7c .
+  It has been generated from version 1a1bfd6d7e43e7b46d2ef919e6922d9ac51b2639 .
   It includes:
      ..../extensions/includedeck/load.js
      ..../jquery.min.js
@@ -511,6 +511,11 @@ that use the API provided by core.
     ].join(', ');
 
     $document.unbind('keydown.deck').bind('keydown.deck', function(event) {
+      if (event.altKey) {
+        // ignore events when the ALT key is down
+        // NB: browsers use ALT+arrow to navigate history
+        return;
+      }
       var isNext = event.which === options.keys.next;
       var isPrev = event.which === options.keys.previous;
       isNext = isNext || $.inArray(event.which, options.keys.next) > -1;
