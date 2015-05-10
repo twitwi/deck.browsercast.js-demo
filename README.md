@@ -54,6 +54,7 @@ Probably do that (to be re-tested)
 
     git checkout master
     git clone https://github.com/twitwi/deck.js tmpdeck --depth 5
+    git -C tmpdeck pull
     node ./tmpdeck/extensions/bundle-maker/make-packed.js "profile-5 browsercast/popcorn.js browsercast/deck.browsercast.js browsercast/deck.browsercast.css browsercast/player.css" .custom.js
     sed -i -e 's@/home/.*/tmpdeck//*@..../@g' .custom.js
     
